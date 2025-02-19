@@ -1,13 +1,10 @@
 name: Deploy to GitHub Pages
 
 on:
-  # 触发条件：push 到 main 分支时
   push:
     branches: [ main ]
-  # 允许手动触发部署
   workflow_dispatch:
 
-# 添加权限设置
 permissions:
   contents: write
 
@@ -35,3 +32,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          publish_branch: gh-pages  # 指定部署分支
+          force_orphan: true       # 强制创建新的部署分支
