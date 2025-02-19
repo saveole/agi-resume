@@ -14,5 +14,6 @@ export default defineConfig({
     ssr: {
       noExternal: ['@fontsource-variable/inter', '@fontsource/fira-code']
     }
-  }
+  },
+  base: '/agi-resume',
 });
